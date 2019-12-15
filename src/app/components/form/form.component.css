@@ -1,0 +1,48 @@
+.form-container {
+  margin: 2% auto;
+  width: 300px;
+  height: 250px;
+  text-align: center;
+  border: 2px solid black;
+}
+
+input {
+  display: inline-block;
+  margin: 5% 10%;
+  padding: 2%;
+  border-radius: 5px;
+}
+
+button {
+  margin: 5% 5%;
+  padding: 2%;
+}
+
+.state-details {
+  margin: 2% auto;
+  width: 600px;
+  height: 250px;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.state-block {
+  display: inline-block;
+}
+
+.first-name {
+  float: left;
+  text-align: left;
+  width: 45%;
+  margin: 1%;
+  padding-left: 2%;
+  border: 1px solid black;
+}
+.second-name {
+  float: right;
+  text-align: left;
+  width: 45%;
+  margin: 1%;
+  padding-left: 2%;
+  border: 1px solid black;
+}
