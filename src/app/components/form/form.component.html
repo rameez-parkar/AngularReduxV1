@@ -1,0 +1,76 @@
+<div class="form-container">
+  <div class="form1-container">
+    <div class="form1">
+      <h3>Form 1</h3>
+      <input
+        type="text"
+        placeholder="First Name"
+        (focus)="FirstNameFocusedIn(1)"
+        (focusout)="FirstNameFocusedOut(1)"
+        (keyup)="FirstNameValueChanged(1)"
+        [(ngModel)]="form1FirstName"
+      />
+      <input
+        type="text"
+        placeholder="Last Name"
+        (focus)="LastNameFocusedIn(1)"
+        (focusout)="LastNameFocusedOut(1)"
+        (keyup)="LastNameValueChanged(1)"
+        [(ngModel)]="form1LastName"
+      />
+      <button>Submit</button>
+    </div>
+    <div class="state-details">
+      <h3>Form State</h3>
+      <div class="first-name state-block">
+        <h4>First Name:</h4>
+        <p>value: {{ displayStates1.firstName.value }}</p>
+        <p>hasFocus: {{ displayStates1.firstName.hasFocus }}</p>
+        <p>isTouched: {{ displayStates1.firstName.isTouched }}</p>
+      </div>
+      <div class="second-name state-block">
+        <h4>Second Name:</h4>
+        <p>value: {{ displayStates1.lastName.value }}</p>
+        <p>hasFocus: {{ displayStates1.lastName.hasFocus }}</p>
+        <p>isTouched: {{ displayStates1.lastName.isTouched }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="form2-container">
+    <div class="form2">
+      <h3>Form 2</h3>
+      <input
+        type="text"
+        placeholder="First Name"
+        (focus)="FirstNameFocusedIn(2)"
+        (focusout)="FirstNameFocusedOut(2)"
+        (keyup)="FirstNameValueChanged(2)"
+        [(ngModel)]="form2FirstName"
+      />
+      <input
+        type="text"
+        placeholder="Last Name"
+        (focus)="LastNameFocusedIn(2)"
+        (focusout)="LastNameFocusedOut(2)"
+        (keyup)="LastNameValueChanged(2)"
+        [(ngModel)]="form2LastName"
+      />
+      <button>Submit</button>
+    </div>
+    <div class="state-details">
+      <h3>Form State</h3>
+      <div class="first-name state-block">
+        <h4>First Name:</h4>
+        <p>value: {{ displayStates2.firstName.value }}</p>
+        <p>hasFocus: {{ displayStates2.firstName.hasFocus }}</p>
+        <p>isTouched: {{ displayStates2.firstName.isTouched }}</p>
+      </div>
+      <div class="second-name state-block">
+        <h4>Second Name:</h4>
+        <p>value: {{ displayStates2.lastName.value }}</p>
+        <p>hasFocus: {{ displayStates2.lastName.hasFocus }}</p>
+        <p>isTouched: {{ displayStates2.lastName.isTouched }}</p>
+      </div>
+    </div>
+  </div>
+</div>
