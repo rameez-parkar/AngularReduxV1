@@ -1,37 +1,43 @@
-export function FirstNameFocusedInAction() {
+export function FirstNameFocusedInAction(formNumber) {
   return {
-    type: "FIRST_NAME_FOCUSED"
+    type: "FIRST_NAME_FOCUSED",
+    formNumber: formNumber
   };
 }
 
-export function FirstNameFocusedOutAction() {
+export function FirstNameFocusedOutAction(formNumber) {
   return {
-    type: "FIRST_NAME_NOT_FOCUSED"
+    type: "FIRST_NAME_NOT_FOCUSED",
+    formNumber: formNumber
   };
 }
 
-export function FirstNameUpdatedValueAction(updatedValue) {
+export function FirstNameUpdatedValueAction(updatedValue, formNumber) {
   return {
     type: "FIRST_NAME_VALUE_UPDATED",
-    updatedValue: updatedValue
+    updatedValue: updatedValue,
+    formNumber: formNumber
   };
 }
 
-export function LastNameFocusedInAction() {
+export function LastNameFocusedInAction(formNumber) {
   return {
-    type: "LAST_NAME_FOCUSED"
+    type: "LAST_NAME_FOCUSED",
+    formNumber: formNumber
   };
 }
 
-export function LastNameFocusedOutAction() {
+export function LastNameFocusedOutAction(formNumber) {
   return {
-    type: "LAST_NAME_NOT_FOCUSED"
+    type: "LAST_NAME_NOT_FOCUSED",
+    formNumber: formNumber
   };
 }
 
-export function LastNameUpdatedValueAction(updatedValue) {
+export function LastNameUpdatedValueAction(updatedValue, formNumber) {
   return {
     type: "LAST_NAME_VALUE_UPDATED",
-    updatedValue: updatedValue
+    updatedValue: updatedValue,
+    formNumber: formNumber
   };
 }

@@ -16,12 +16,18 @@ import {
   styleUrls: ["./form.component.css"]
 })
 export class FormComponent implements OnInit {
-  firstName: string = "";
-  lastName: string = "";
-  displayStates: States;
+  formNumber: number = 1;
+  form1FirstName: string = "";
+  form1LastName: string = "";
+  form2FirstName: string = "";
+  form2LastName: string = "";
+  displayStates1: States;
+  displayStates2: States;
   constructor() {}
 
   ngOnInit() {
+    this.displayStates1 = Store.getState()[1];
+    this.displayStates2 = Store.getState()[2];
     this.GetStateValues();
     Store.subscribe(() => {
       this.GetStateValues();
@@ -29,32 +35,60 @@ export class FormComponent implements OnInit {
   }
 
   GetStateValues() {
-    this.displayStates = Store.getState();
-    this.firstName = this.displayStates.firstName.value;
-    this.lastName = this.displayStates.lastName.value;
+    if (this.formNumber === 1) {
+      this.displayStates1 = Store.getState()[this.formNumber];
+      this.form1FirstName = this.displayStates1.firstName.value;
+      this.form1LastName = this.displayStates1.lastName.value;
+    } else {
+      this.displayStates2 = Store.getState()[this.formNumber];
+      this.form2FirstName = this.displayStates2.firstName.value;
+      this.form2LastName = this.displayStates2.lastName.value;
+    }
   }
 
-  FirstNameValueChanged() {
-    Store.dispatch(FirstNameUpdatedValueAction(this.firstName));
+  FirstNameValueChanged(formNumber: number) {
+    this.formNumber = formNumber;
+    if (formNumber === 1)
+      Store.dispatch(
+        FirstNameUpdatedValueAction(this.form1FirstName, this.formNumber)
+      );
+    else {
+      Store.dispatch(
+        FirstNameUpdatedValueAction(this.form2FirstName, this.formNumber)
+      );
+    }
   }
 
-  FirstNameFocusedIn() {
-    Store.dispatch(FirstNameFocusedInAction());
+  FirstNameFocusedIn(formNumber: number) {
+    this.formNumber = formNumber;
+    Store.dispatch(FirstNameFocusedInAction(this.formNumber));
   }
 
-  FirstNameFocusedOut() {
-    Store.dispatch(FirstNameFocusedOutAction());
+  FirstNameFocusedOut(formNumber: number) {
+    this.formNumber = formNumber;
+    Store.dispatch(FirstNameFocusedOutAction(this.formNumber));
   }
 
-  LastNameValueChanged() {
-    Store.dispatch(LastNameUpdatedValueAction(this.lastName));
+  LastNameValueChanged(formNumber: number) {
+    this.formNumber = formNumber;
+    if (formNumber === 1)
+      Store.dispatch(
+        LastNameUpdatedValueAction(this.form1LastName, this.formNumber)
+      );
+    else {
+      Store.dispatch(
+        LastNameUpdatedValueAction(this.form2LastName, this.formNumber)
+      );
+    }
   }
 
-  LastNameFocusedIn() {
-    Store.dispatch(LastNameFocusedInAction());
+  LastNameFocusedIn(formNumber: number) {
+    this.formNumber = formNumber;
+    Store.dispatch(LastNameFocusedInAction(this.formNumber));
   }
 
-  LastNameFocusedOut() {
-    Store.dispatch(LastNameFocusedOutAction());
+  LastNameFocusedOut(formNumber: number) {
+    this.formNumber = formNumber;
+    Store.dispatch(LastNameFocusedOutAction(this.formNumber));
   }
 }
