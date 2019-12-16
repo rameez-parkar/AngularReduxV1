@@ -1,6 +1,28 @@
 .form-container {
+  display: inline;
+}
+
+.form1-container {
+  float: left;
+  width: 50%;
+}
+
+.form2-container {
+  float: right;
+  width: 50%;
+}
+
+.form1 {
   margin: 2% auto;
-  width: 300px;
+  width: 44%;
+  height: 250px;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.form2 {
+  margin: 2% auto;
+  width: 44%;
   height: 250px;
   text-align: center;
   border: 2px solid black;
